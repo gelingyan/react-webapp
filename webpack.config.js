@@ -35,13 +35,10 @@ module.exports = {
                 use: [{
                     loader: "css-loader",
                     options: {
-                        modules: true
+                        modules: false
                     }
                 }, {
-                    loader: "less-loader",
-                    options: {
-                        modules: true
-                    }
+                    loader: "less-loader"
                 }, {
                     loader: "postcss-loader"
                 }]
