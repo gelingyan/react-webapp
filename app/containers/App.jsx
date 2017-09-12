@@ -30,13 +30,13 @@ class App extends React.Component {
         // 从 localStorage 里面获取
         let cityName = LocalStore.getItem(CITYNAME)
         if (cityName == null) { // cityName===undefined || cityName===null
-            cityName = '北京'
+            cityName = '深圳'
         }
 
         // 将城市信息存储到 Redux 中
-        // this.props.userInfoActions.update({
-        //     cityName: cityName
-        // })
+        this.props.userInfoActions.update({
+            cityName: cityName
+        })
 
         this.setState({
             initDone: true

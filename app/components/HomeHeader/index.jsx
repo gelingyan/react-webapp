@@ -1,6 +1,6 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import './style.less';
+import './style.less'
 
 class HomeHeader extends React.Component {
     constructor(props, content) {
@@ -9,10 +9,21 @@ class HomeHeader extends React.Component {
     }
     render() {
         return (
-            <div className="clear-fix">
-                <div className="float-left">深圳</div>
-                <div className="float-right">用户中心</div>
-                <div><input /></div>
+            <div id="home-header" className="clear-fix">
+                <div className="home-header-left float-left">
+                    {this.props.cityName}
+                    &nbsp;
+                    <i className="icon-circle-down"></i>
+                </div>
+                <div className="home-header-right float-right">
+                    <i className="icon-user"></i>
+                </div>
+                <div className="home-header-middle">
+                    <div className="search-container">
+                        <i className="icon-search"></i>
+                        <input type="text" placeholder="请输入关键字"/>
+                    </div>
+                </div>
             </div>
         )
     }
