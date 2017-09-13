@@ -18,7 +18,13 @@ module.exports = {
         historyApiFallback: true, //不跳转
         inline: true,
         hot: true,
-        port: 8082
+        port: 8082,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                secure: false
+            }
+        }
     },
     resolve: {
         extensions: ['.js', '.jsx', '.css', '.less']

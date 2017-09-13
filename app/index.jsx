@@ -12,6 +12,7 @@ import configureStore from './store/configureStore'
 const store = configureStore()
 import './static/css/common.less';
 import './static/css/font.css'
+
 render(
     <Provider store={store}>
         <RouteMap history={hashHistory}/>
