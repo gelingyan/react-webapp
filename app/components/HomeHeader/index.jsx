@@ -13,10 +13,10 @@ class HomeHeader extends React.Component {
                 <div className="home-header-left float-left">
                     {this.props.cityName}
                     &nbsp;
-                    <i className="icon-circle-down"></i>
+                    <i className="icon-keyboard_arrow_down"></i>
                 </div>
                 <div className="home-header-right float-right">
-                    <i className="icon-user"></i>
+                    <i className="icon-person"></i>
                 </div>
                 <div className="home-header-middle">
                     <div className="search-container">
