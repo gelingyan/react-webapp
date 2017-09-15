@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "mock": "node --harmony ./mock/server.js",
-    "start": "NODE_ENV=dev && webpack-dev-server --progress --colors",
+    "start": "set NODE_ENV=dev && webpack-dev-server --progress --colors",
     "server": "webpack-dev-server --open",
     "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress"
   },
@@ -39,7 +39,6 @@
     "koa-router": "^7.2.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
-    "mockjs": "^1.0.1-beta3",
     "open-browser-webpack-plugin": "^0.0.5",
     "postcss-loader": "^2.0.6",
     "react-addons-pure-render-mixin": "^15.6.0",

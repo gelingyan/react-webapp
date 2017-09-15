@@ -1,0 +1,25 @@
+/**
+ * Created by gelingyan on 2017/9/12.
+ */
+{
+    "parser": "babel-eslint", // 使用babel-eslint来作为eslint的解析器
+    "ecmaFeatures": {
+        "jsx": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "semi": 0,
+        "no-empty": 1, //空代码块
+        "no-extra-semi": 1, //多余的分号
+        "no-extra-parens": 0, //多余的括号
+        "comma-dangle": ["error", "only-multiline"],
+        "no-multi-spaces": 0 //不允许多个空格
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    }
+}
