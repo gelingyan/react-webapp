@@ -1,7 +1,8 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { getListData } from '../../../fetch/home/home'
-
+import ListComponent from '../../../components/List'
+import LoadMore from '../../../components/LoadMore'
 import './style.less'
 
 class List extends React.Component {
@@ -9,18 +10,26 @@ class List extends React.Component {
         super(props, content)
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            data: [],
-            hasMore: false
+            data: [],   //  存储列表信息
+            hasMore: false,  //  记录当前状态下是否有更多加载
+            isLoadingMore: false,    // "加载中..."  "点击加载更多"
+            page: 1     // 下一页的页码
         }
     }
     render() {
         return (
             <div>
                 <h2 className="home-list-title">猜你喜欢</h2>
-                <div>
-                    {this.state.hasMore.toString()}
-                    {this.state.data.length}
-                </div>
+                {
+                    this.state.data.length
+                    ? <ListComponent data={this.state.data}/>
+                    : <div>加载中...</div>
+                }
+                {
+                    this.state.hasMore
+                    ? <LoadMore isLoadingMore={this.state.isLoadingMore} loadMoreFn={this.loadMoreData.bind(this)}/>
+                    : ''
+                }
             </div>
         )
     }
@@ -34,6 +43,23 @@ class List extends React.Component {
         const result = getListData(cityName, 0)
         this.resultHandle(result)
     }
+    // 记载更多
+    loadMoreData() {
+        // 记录状态
+        this.setState({
+            isLoadingMore: true
+        })
+        const cityName = this.props.cityName
+        const page = this.state.page // 下一页
+        const result = getListData(cityName, page)
+        this.resultHandle(result)
+
+        // 增加 page 的计数
+        this.setState({
+            page: page + 1,
+            isLoadingMore: false
+        })
+    }
     // 数据处理
     resultHandle(result) {
         result.then((res) => {
@@ -44,7 +70,7 @@ class List extends React.Component {
             // 存储
             this.setState({
                 hasMore: hasMore,
-                data: data
+                data: this.state.data.concat(data)
             })
         })
     }
