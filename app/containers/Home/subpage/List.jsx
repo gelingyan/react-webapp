@@ -43,7 +43,7 @@ class List extends React.Component {
         const result = getListData(cityName, 0)
         this.resultHandle(result)
     }
-    // 记载更多
+    // 加载更多
     loadMoreData() {
         // 记录状态
         this.setState({
