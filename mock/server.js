@@ -31,6 +31,16 @@ router.get('/api/homelist/:city/:page', ctx => {
     ctx.body = homeListData
 })
 
+const detailInfo = require('./detail/info')
+router.get('/api/detail/info/:id', ctx => {
+    ctx.body = detailInfo
+})
+
+const detailComment = require('./detail/list')
+router.get('/api/detail/comment/:page/:id', ctx => {
+    ctx.body = detailComment
+})
+
 // 开启服务器并生成路由
 app.use(router.routes())
     .use(router.allowedMethods())

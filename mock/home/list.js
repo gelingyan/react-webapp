@@ -5,6 +5,7 @@ module.exports = {
     hasMore: true,
     data: [
         {
+            id: 1,
             img: 'http://img3.mukewang.com/59b77bac0001985906000338-228-128.jpg',
             title: '汉堡大大',
             subTitle: '叫我汉堡大大，还你多彩口味',
@@ -13,6 +14,7 @@ module.exports = {
             number: '389'
         },
         {
+            id: 2,
             img: 'http://img3.mukewang.com/59b77bac0001985906000338-228-128.jpg',
             title: '北京开饭店',
             subTitle: '[望京]自助晚餐',
@@ -21,6 +23,7 @@ module.exports = {
             number: '689'
         },
         {
+            id: 3,
             img: 'http://img3.mukewang.com/59b77bac0001985906000338-228-128.jpg',
             title: '服装定制',
             subTitle: '原价xx元，现价xx元，可修改一次',

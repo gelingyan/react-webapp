@@ -1,24 +1,22 @@
 import React from 'react'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import Header from '../../components/Header'
-import Info from './subpage/Info'
-import Comment from './subpage/Comment'
+import Item from './Item'
 import './style.less'
-class Detail extends React.Component {
+class List extends React.Component {
     constructor(props, content) {
         super(props, content)
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
     render() {
-        const id = this.props.params.id
+        const data = this.props.data
         return (
             <div>
-                <Header title="商户详情"/>
-                <Info id={id}/>
-                <Comment id={id}/>
+                {data.map((item, index) => {
+                    return <Item key={index} data={item}/>
+                })}
             </div>
         )
     }
 }
 
-export default Detail
+export default List
