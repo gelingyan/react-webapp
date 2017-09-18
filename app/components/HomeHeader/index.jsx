@@ -20,7 +20,9 @@ class HomeHeader extends React.Component {
                     <i className="icon-keyboard_arrow_down"></i>
                 </div>
                 <div className="home-header-right float-right">
-                    <i className="icon-person"></i>
+                    <Link to="/login">
+                        <i className="icon-person"></i>
+                    </Link>
                 </div>
                 <div className="home-header-middle">
                     <div className="search-container">
